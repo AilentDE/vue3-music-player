@@ -1,5 +1,6 @@
 fastapi
-uvicorn
+# uvicorn #use mangum for AWS Lambda
+mangum
 pydantic_settings
 pydantic[email]
 passlib
