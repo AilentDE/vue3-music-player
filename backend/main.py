@@ -4,6 +4,8 @@ from fastapi.responses import ORJSONResponse
 from config.database_mongodb import connect_to_mongo, close_mongo_connection
 from routes import auth, file, comment
 
+from mangum import Mangum
+
 app = FastAPI(default_response_class=ORJSONResponse)
 
 app.add_middleware(
@@ -19,7 +21,9 @@ app.include_router(file.router)
 app.include_router(comment.router)
 
 app.add_event_handler('startup', connect_to_mongo)
-app.add_event_handler('shutdown', close_mongo_connection)
+# app.add_event_handler('shutdown', close_mongo_connection) # Not use in AWS Lambda
+
+handler = Mangum(app)
 
 # base
 @app.get('/')
