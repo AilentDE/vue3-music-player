@@ -48,6 +48,8 @@ import axios from 'axios'
 import qs from 'qs'
 import SongItem from '@/components/SongItem.vue'
 
+console.log(import.meta.env)
+
 const songs = reactive([])
 const limit = 20
 let skip = 0
@@ -57,7 +59,7 @@ const getSongs = async () => {
 
   const params = qs.stringify({ limit, skip }, { addQueryPrefix: true })
   await axios
-    .get(import.meta.env.VITE_API_BASE_URL + '/file/songs' + params)
+    .get(import.meta.env.VITE_API_URL + '/file/songs' + params)
     .then((response) => {
       if (response.data.length === 0) {
         pendingRequest.value = false

@@ -83,7 +83,7 @@ const allowPlaySong = computed(() => {
 const song = reactive({})
 const loadSong = async () => {
   await axios
-    .get(import.meta.env.VITE_API_BASE_URL + '/file/song/' + route.params.songId)
+    .get(import.meta.env.VITE_API_URL + '/file/song/' + route.params.songId)
     .then((response) => {
       Object.assign(song, response.data)
     })
@@ -113,7 +113,7 @@ const loadComment = async () => {
 
   const params = qs.stringify({ limit, skip, sortBy: sortBy.value }, { addQueryPrefix: true })
   await axios
-    .get(import.meta.env.VITE_API_BASE_URL + '/comment/song/' + route.params.songId + params)
+    .get(import.meta.env.VITE_API_URL + '/comment/song/' + route.params.songId + params)
     .then((response) => {
       if (response.data.length === 0) {
         pendingRequest.value = false
@@ -150,7 +150,7 @@ onBeforeUnmount(() => {
 const updateComment = async () => {
   const params = qs.stringify({ limit: 1, skip: 0, sortBy: sortBy.value }, { addQueryPrefix: true })
   await axios
-    .get(import.meta.env.VITE_API_BASE_URL + '/comment/song/' + route.params.songId + params)
+    .get(import.meta.env.VITE_API_URL + '/comment/song/' + route.params.songId + params)
     .then((response) => {
       comments.unshift(...response.data)
     })
@@ -167,7 +167,7 @@ const changeSortBy = async (value) => {
     { addQueryPrefix: true }
   )
   await axios
-    .get(import.meta.env.VITE_API_BASE_URL + '/comment/song/' + route.params.songId + params)
+    .get(import.meta.env.VITE_API_URL + '/comment/song/' + route.params.songId + params)
     .then((response) => {
       comments.push(...response.data)
     })

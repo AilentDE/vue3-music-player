@@ -10,7 +10,7 @@ export const useUserStore = defineStore('user', () => {
     userLoggedIn.value = true
   }
 
-  let url = import.meta.env.VITE_API_BASE_URL + '/auth'
+  let url = import.meta.env.VITE_API_URL + '/auth'
   const register = async (values) => {
     const formData = new FormData()
     formData.append('username', values.email)

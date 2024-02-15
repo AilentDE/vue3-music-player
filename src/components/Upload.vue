@@ -73,7 +73,7 @@ const upload = (event) => {
           cancelUploadToken: cancelTokenSource
         }) - 1
       await axios
-        .post(import.meta.env.VITE_API_BASE_URL + '/file/song', formData, {
+        .post(import.meta.env.VITE_API_URL + '/file/song', formData, {
           headers: { Authorization: `Bearer ${localStorage.token}` },
           cancelToken: cancelTokenSource.token,
           onUploadProgress: (progressEvent) => {

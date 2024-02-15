@@ -84,7 +84,7 @@ const commentSubmit = handleSubmit(async (values) => {
 
   values.songId = props.songId
   await axios
-    .post(import.meta.env.VITE_API_BASE_URL + '/comment/song', values, {
+    .post(import.meta.env.VITE_API_URL + '/comment/song', values, {
       headers: { Authorization: `Bearer ${localStorage.token}` }
     })
     .then((response) => {
