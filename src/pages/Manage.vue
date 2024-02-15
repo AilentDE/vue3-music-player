@@ -40,7 +40,7 @@ import { onBeforeRouteLeave } from 'vue-router'
 const songs = reactive([])
 const getsongs = async () => {
   await axios
-    .get('http://localhost:8000/file/userSongs', {
+    .get(import.meta.env.VITE_API_BASE_URL + '/file/userSongs', {
       headers: { Authorization: `Bearer ${localStorage.token}` }
     })
     .then((response) => {

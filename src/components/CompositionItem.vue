@@ -122,7 +122,7 @@ const editSubmit = handleSubmit(async (values) => {
   log.inSubmission = true
   log.showAlert = false
   await axios
-    .patch('http://localhost:8000/file/song/' + props.song.id, values, {
+    .patch(import.meta.env.VITE_API_BASE_URL + '/file/song/' + props.song.id, values, {
       headers: { Authorization: `Bearer ${localStorage.token}` }
     })
     .then(() => {
@@ -147,7 +147,7 @@ const editSubmit = handleSubmit(async (values) => {
 
 const deleteSong = async () => {
   await axios
-    .delete('http://localhost:8000/file/song/' + props.song.id, {
+    .delete(import.meta.env.VITE_API_BASE_URL + '/file/song/' + props.song.id, {
       headers: { Authorization: `Bearer ${localStorage.token}` }
     })
     .then(() => {

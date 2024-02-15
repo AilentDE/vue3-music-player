@@ -57,7 +57,7 @@ const getSongs = async () => {
 
   const params = qs.stringify({ limit, skip }, { addQueryPrefix: true })
   await axios
-    .get('http://localhost:8000/file/songs' + params)
+    .get(import.meta.env.VITE_API_BASE_URL + '/file/songs' + params)
     .then((response) => {
       if (response.data.length === 0) {
         pendingRequest.value = false

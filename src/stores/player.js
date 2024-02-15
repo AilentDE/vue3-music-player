@@ -15,7 +15,7 @@ export const usePlayerStore = defineStore('player', () => {
     if (sound.howl && sound.howl instanceof Howl) {
       sound.howl.unload()
     }
-    const songUrl = 'http://localhost:8000/file/song/' + song_id + '/play'
+    const songUrl = import.meta.env.VITE_API_BASE_URL + '/file/song/' + song_id + '/play'
     sound.howl = new Howl({
       src: [songUrl],
       html5: true,
