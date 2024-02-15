@@ -104,7 +104,7 @@ const playSong = () => {
 loadSong()
 
 let comments = reactive([])
-const limit = 5
+const limit = 20
 let skip = 0
 const sortBy = ref('-1')
 const pendingRequest = ref(false)

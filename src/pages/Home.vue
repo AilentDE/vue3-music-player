@@ -49,7 +49,7 @@ import qs from 'qs'
 import SongItem from '@/components/SongItem.vue'
 
 const songs = reactive([])
-const limit = 5
+const limit = 20
 let skip = 0
 const pendingRequest = ref(false)
 const getSongs = async () => {
