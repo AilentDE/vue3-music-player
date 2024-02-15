@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+pydantic_settings
+pydantic[email]
+passlib
+python-jose
+cryptography
+bcrypt==4.0.1
+python-multipart
+motor
+orjson
+mutagen
