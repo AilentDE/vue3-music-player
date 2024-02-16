@@ -1,57 +1,45 @@
-# vue-music-player
+# Vue Music Player
 
-This template should help get you started developing with Vue 3 in Vite.
+This project is a music player website created for practice purposes. Anyone can register, upload MP3 files, and play MP3 files on this platform.
 
-## Recommended IDE Setup
+You can test the project using the provided [DEMO](http://de-test-music.com.s3-website-ap-northeast-1.amazonaws.com/)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+The project mainly utilizes Vue 3, FastAPI, and MongoDB Atlas. The DEMO is deployed using AWS S3 and Lambda.
 
-## Customize configuration
+## Local Testing
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+If you want to test this project locally, simply clone the repository and configure the .env files:
 
-## Project Setup
+1. Configure the .env file for FastAPI located in `/backend`.
+   Environment variables include:
 
-```sh
-npm install
-```
+   - MONGODB_URI={your_mongodb_uri}
+   - SECRET_KEY={any_secret}
+   - ALGORITHM={HS256}
 
-### Compile and Hot-Reload for Development
+   After configuration, navigate to `/backend` and run:
 
-```sh
-npm run dev
-```
+   ```bash
+   pip install -r requirements.txt
+   uvicorn main:app
+   ```
 
-### Compile and Minify for Production
+   This will start the backend server.
 
-```sh
-npm run build
-```
+2. Configure the .env file for Vite located in the root directory.
+   Environment variables include:
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+   - VITE_API_URL={`http://localhost:8000`}
 
-```sh
-npm run test:unit
-```
+   After configuration, run:
 
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
+   ```bash
+   npm install
+   npm run dev
+   ```
 
-```sh
-npm run test:e2e:dev
-```
+   This will start the frontend server. You can access the project at `http://localhost:5173/`.
 
-This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
+## Contact
 
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
-
-```sh
-npm run build
-npm run test:e2e
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+If you have any questions or feedback, feel free to contact me.
