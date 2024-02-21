@@ -2,7 +2,7 @@
 
 This project is a music player website created for practice purposes. Anyone can register, upload MP3 files, and play MP3 files on this platform.
 
-You can test the project using the provided [DEMO](http://de-test-music.com.s3-website-ap-northeast-1.amazonaws.com/)
+You can test the project using the provided [DEMO](https://music-player.de-website.com/)
 
 The project mainly utilizes Vue 3, FastAPI, and MongoDB Atlas. The DEMO is deployed using AWS S3 and Lambda.
 
